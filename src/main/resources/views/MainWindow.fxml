@@ -1,7 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.controllers.MainWindowController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.controllers.MainWindowController">
+    <Text id="mainTitle" layoutX="11.0" layoutY="48.0" text="Multiplicacion de matrices con Cannon MPI">
+      <font>
+        <Font name="Tahoma Bold" size="20.0" />
+      </font>
+    </Text>
+    <Label id="numCores" layoutX="11.0" layoutY="68.0" text="Numero de nucleos">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font>
+    </Label>
+    <Label id="sizeMatrix" layoutX="261.0" layoutY="68.0" text="Tamaño de la matriz">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font>
+    </Label>
+    <Label id="dataType" layoutX="483.0" layoutY="68.0" text="Tipo de dato">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font>
+    </Label>
 
+    <Button id="accept" layoutX="489.0" layoutY="259.0" text="Aceptar" />
+
+    <VBox id="numberCores" layoutX="11.0" layoutY="95.0">
+        <RadioButton id="oneCore" selected="true" text="1" userData="1">
+         <toggleGroup>
+            <ToggleGroup fx:id="coreGroup" />
+         </toggleGroup>
+        </RadioButton>
+        <RadioButton id="twoCore" text="2" toggleGroup="$coreGroup" userData="2" />
+        <RadioButton id="threeCore" text="3" toggleGroup="$coreGroup" userData="3" />
+        <RadioButton id="fourCore" text="4" toggleGroup="$coreGroup" userData="4" />
+        <RadioButton id="fiveCore" text="5" toggleGroup="$coreGroup" userData="5" />
+        <RadioButton id="sixCore" text="6" toggleGroup="$coreGroup" userData="6" />
+        <RadioButton id="sevenCore" text="7" toggleGroup="$coreGroup" userData="7" />
+        <RadioButton id="eightCore" text="8" toggleGroup="$coreGroup" userData="8" />
+    </VBox>
+    <VBox id="matrixSize" layoutX="261.0" layoutY="95.0">
+        <RadioButton id="n16" selected="true" text="16" userData="16">
+         <toggleGroup>
+            <ToggleGroup fx:id="matrixSizeGroup" />
+         </toggleGroup>
+        </RadioButton>
+        <RadioButton id="n32" text="32" toggleGroup="$matrixSizeGroup" userData="32" />
+        <RadioButton id="n64" text="64" toggleGroup="$matrixSizeGroup" userData="64" />
+        <RadioButton id="n128" text="128" toggleGroup="$matrixSizeGroup" userData="128" />
+        <RadioButton id="n256" text="256" toggleGroup="$matrixSizeGroup" userData="256" />
+        <RadioButton id="n512" text="512" toggleGroup="$matrixSizeGroup" userData="512" />
+        <RadioButton id="n1024" text="1024" toggleGroup="$matrixSizeGroup" userData="1024" />
+        <RadioButton id="n2048" text="2048" toggleGroup="$matrixSizeGroup" userData="2048" />
+    </VBox>
+    <VBox id="matrixDataType" layoutX="483.0" layoutY="95.0">
+        <RadioButton id="intType" selected="true" text="int" userData="int">
+         <toggleGroup>
+            <ToggleGroup fx:id="dataTypeGroup" />
+         </toggleGroup>
+        </RadioButton>
+        <RadioButton id="floatType" text="float" toggleGroup="$dataTypeGroup" userData="float" />
+    </VBox>
 </AnchorPane>
